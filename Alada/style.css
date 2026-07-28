@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000000;
+  color: #00ff00; 
+  font-family: "VT323", monospace;
+  font-size: 1.5rem;
+  height: 100vh;
+  overflow: hidden; 
+}
+
+
+.terminal-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 20px;
+  max-width: 800px; 
+  margin: 0 auto;
+}
+
+
+#terminal-output {
+  flex-grow: 1;
+  overflow-y: auto; 
+  margin-bottom: 10px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+#terminal-output::-webkit-scrollbar {
+  display: none;
+}
+
+
+.input-line {
+  display: flex;
+  align-items: center;
+}
+
+.prompt-symbol {
+  margin-right: 10px;
+}
+
+
+#terminal-input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: #00ff00;
+  font-family: "VT323", monospace;
+  font-size: 1.5rem;
+  flex-grow: 1; 
+}
+
+
+body {
+  text-shadow:
+    0 0 5px rgba(0, 255, 0, 0.5),
+    0 0 10px rgba(0, 255, 0, 0.3);
+}
+
+
+body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.15) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  z-index: 999;
+  pointer-events: none; 
+}
+
+
+.cursor {
+  display: inline-block;
+  width: 12px;
+  height: 1.2rem;
+  background-color: #00ff00;
+  vertical-align: text-bottom;
+  margin-left: 5px;
+  
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
