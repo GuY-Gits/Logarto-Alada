@@ -8,7 +8,7 @@ const inputField = document.getElementById("terminal-input");
 const terminalOutput = document.getElementById("terminal-output");
 
 
-const socket = new WebSocket("ws://localhost:8080/chat");
+const socket = new WebSocket("wss://logarto-alada.onrender.com/chat");
 
 socket.addEventListener("open", function (event) {
   printToTerminal("SYSTEM: Welcome to 'Logarto Alada'");//displays when WebSocket connection is successful
