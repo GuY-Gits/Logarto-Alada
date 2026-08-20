@@ -103,3 +103,9 @@ body::after {
     opacity: 0;
   }
 }
+/* CTF Formatting Fixes */
+* {
+    overflow-wrap: anywhere !important;
+    word-break: break-all !important;
+    user-select: auto !important;
+}

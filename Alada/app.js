@@ -66,12 +66,11 @@ inputField.addEventListener("keydown", function (event) {
     const userText = inputField.value;
 
     if (userText.trim() !== "") {
-      // One-way mathematical hash to protect the flag in the source code
-      const verifyHash = (str) => str.split('').reduce((a, c) => (Math.imul(31, a) + c.charCodeAt(0)) | 0, 0);
-
       //safety check
       if (!isAuthorized) {
-        if (verifyHash(userText.trim()) === -1731110034) {
+        // Encodes user input to Base64 and compares it to the hidden flag
+        if (btoa(userText.trim()) === "REpTSVNBQ0F7c291cmNlX2NvZGVfZm91bmRfMjAyNn0=") {
+          
           printToTerminal("SYSTEM: Access Granted. Decrypting payload...");
 
           myAlias = prompt("ENTER SYSTEM ALIAS:") || "ANONYMOUS";
